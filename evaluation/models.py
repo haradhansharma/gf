@@ -30,6 +30,7 @@ class DifinedLabel(models.Model):
 class Question(models.Model):
     name = models.CharField(max_length=252)
     sort_order = models.IntegerField(default=1)
+    description = models.CharField(max_length=600)
     is_active = models.BooleanField(default=False)
 
     class Meta:

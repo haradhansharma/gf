@@ -23,6 +23,7 @@ from django.core.exceptions import PermissionDenied
 @login_required
 @producer_required
 def eva_index(request):  
+    print(request.session.items())
     null_session(request)
     try:
         session_evaluator = Evaluator.objects.get(id = request.session['evaluator'])
@@ -88,6 +89,7 @@ def eva_index(request):
         context = {
         'form': form,
         'evaluator': False,
+        
         }
         return render(request, 'evaluation/index.html', context = context)
     else:

@@ -45,7 +45,7 @@ def signup(request):
                 })
                 new_user.email_user(subject, message)
                 
-                messages.success(request, 'Yur account has been created, please wait for approval!')
+                messages.success(request, 'Your account has been created, please wait for approval!')
             else: 
                 new_user.save()
                 subject = 'Account has been created, you can login now!'                  
@@ -59,7 +59,7 @@ def signup(request):
                 })
                 new_user.email_user(subject, message)
                 
-                messages.success(request, 'Yur account has been created, you may login now!') 
+                messages.success(request, 'Your account has been created, you may login now!') 
             return HttpResponseRedirect(reverse_lazy('login'))
         else:
             messages.error(request, 'Invalid form submission.')

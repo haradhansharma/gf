@@ -21,7 +21,7 @@ class EvaluatorForm(forms.ModelForm):
             'name': _('Name'),
             'email': _('Email'),
             'orgonization': _('Organization'),
-            'phone': _('Pnone'),
+            'phone': _('Phone'),
             'biofuel': _('Select Biofuel'),
             
             

@@ -59,9 +59,17 @@
                                     {% csrf_token %}
                                     {{form.as_p}}
 
-                                    <div class="btn btn-info mt-5 mb-5">Disclaimer: The green fuel validation platform
+                                    <div class="btn btn-success mt-3">Disclaimer: The green fuel validation platform
                                         and its partners cannot be held responsible for the veracity of the information
                                         provided in the self assessment.</div>
+
+                                    <div class="btn btn-info mt-3 mb-3">Disclaimer: The green fuel validation platform
+                                        and its partners cannot be held responsible for the veracity of the information
+                                        provided in the self assessment.</div>
+                                        <div class="mt-2 mb-2">
+                                            <input type="checkbox" name="" id="" > <span> Please confirm term and cnditions</span>
+                                        </div>
+                                    
                                     <button type="submit" hx-post="." hx-target="#xxx" hx-indicator="#indicator2" hx-swap="outerHTML" id="btn_ini" class="btn btn-success btn-block">Submit</button>
                                     <span id="indicator2" class="htmx-indicator" > Processing.... </span>
                                 </form>
@@ -72,7 +80,11 @@
                         {% else %}
                         <div class="card text-center">
                             <div class="card-header">
-                                Biofuel Producer
+                                {{ timing_text }}
+                            </div>
+                            <div class="card-header">
+                                
+                                Greenfuel Producer
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">Name: {{evaluator_data.name}}</h4>
@@ -107,8 +119,6 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5>Options:</h5>
-                                        
-                                        
                                         <form method="POST" >
                                             {% csrf_token %}
                                             {% for optn in optns %}                                          
@@ -141,7 +151,7 @@
                                             <!--
                                             <a class="btn btn-success btn-block"
                                                 href="{%  url 'evaluation:option_append' %}">Confirm</a>
-                                                -->
+                                            -->
 
                                                 <button class="btn btn-success btn-block" hx-get="{%  url 'evaluation:option_append' %}"
                                                 hx-indicator="#indicator"
@@ -176,19 +186,7 @@
                 </div>
             </div>
         </div>
-  
-
-
-
-
-
-
-
-
-
-
     </div>
-
 </div>
 
     </main>

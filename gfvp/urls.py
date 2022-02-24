@@ -19,6 +19,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('evaluation.urls')),
     path('', include('home.urls')),
+    path('', include('crm.urls')),
     path('<str:slug>/', user_types, name='types'),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),

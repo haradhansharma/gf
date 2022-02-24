@@ -14,8 +14,12 @@ from django.template.loader import render_to_string
 
 def signup(request):
     
+    if 'interested_in' not in request.session:
+        request.session['interested_in'] = ''      
+    
     
     slug_of_expart = UserType.objects.get(is_expert = True).slug
+    
     
     if slug_of_expart == request.session['interested_in']:    
         request.session['hidden'] = ''

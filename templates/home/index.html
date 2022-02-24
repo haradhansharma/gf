@@ -1,4 +1,5 @@
 {% extends "includes/g_base.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     
@@ -41,6 +42,7 @@
                             Self assesment
                         </h2>
                         <!-- Button Modal -->
+                        <!--
                         
                         <div class="d-flex justify-content-center flex-column mb-6 mb-lg-5">
                             <a href="https://themesberg.com" target="_blank">
@@ -51,6 +53,7 @@
                                 <a target="_blank" href="https://appseed.us">Coded by AppSeed</a>
                             </a>
                         </div>
+                    -->
                     </div>
                 </div>
             </div>
@@ -68,12 +71,12 @@
 
 
 
-                            <div class="row p-3">
+                            <div class="row p-3 justify-content-center">
                             {% for user_type in user_types %}
                             
-                            <div class="col-12 col-sm-6 col-xl-4">
+                            <div class="col-12 col-sm-6 col-xl-4"  >
                                 <div class="card border-0 shadow">
-                                    <a href="{{ user_type.get_absolute_url }}">
+                                    <a href="{{ user_type.get_absolute_url }}" {{ user_type.active }}>
                                     <div class="card-body">
                                         <div class="row d-block d-xl-flex align-items-center">
 
@@ -81,7 +84,8 @@
                                                
 
                                             <div class="icon icon-shape bg-white shadow-lg rounded mb-4">
-                                                <svg class="icon icon-md text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="{{ user_type.svg_path }}"></path></svg>
+                                                
+                                                <img src="{{ user_type.icon.url }}" alt="">
                                             </div>
 
 
@@ -96,7 +100,7 @@
                                     </div>
                                 </a> 
                                 </div>
-                            </div>
+                            </button>
                         
                             {% endfor %}
 
@@ -107,6 +111,8 @@
                 </div>
             </div>
         </div>
+
+<!--
 
         <section class="section section-lg bg-soft pt-0">
             <div class="container">
@@ -159,7 +165,7 @@
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                             Demo
                         </a>
-                        <!-- <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/plugins/kanban/" target="_blank" class="btn btn-outline-primary"><span class="fas fa-book me-2"></span> Guide</a> -->
+                         <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/plugins/kanban/" target="_blank" class="btn btn-outline-primary"><span class="fas fa-book me-2"></span> Guide</a> 
                     </div>
                     <div class="col-lg-6">
                         <img src="/static/assets/img/mockup-kanban-presentation.png" alt="Kanban Preview">
@@ -558,14 +564,14 @@
                 <div class="row mt-6">
                     <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
                         <div class="card shadow border-0 p-4">
-                            <!-- Header -->
+                             Header 
                             <div class="card-header bg-white border-0 pb-0">
                                 <span class="d-block">
                                     <span class="h2 text-primary fw-bold align-top">Free Demo</span>
                                 </span>
                             </div>
-                            <!-- End Header -->
-                            <!-- Content -->
+                             End Header 
+                             Content 
                             <div class="card-body">
                                 <ul class="list-group list-group-flush price-list">
                                     <li class="list-group-item border-0 ps-0"><strong>100</strong> Components</li>
@@ -579,19 +585,19 @@
                                     <li class="list-group-item d-flex align-items-center border-0 ps-0 pb-0"><svg class="icon icon-xs text-danger me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> Premium Support</li>
                                 </ul>
                             </div>
-                            <!-- End Content -->
+                             End Content
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
                         <div class="card shadow border-0 p-4 py-5 mt-lg-n5">
-                            <!-- Header -->
+                             Header
                             <div class="card-header bg-white border-0 pb-0">
                                 <span class="d-block">
                                     <span class="h2 text-primary fw-bold align-top">Pro Version</span>
                                 </span>
                             </div>
-                            <!-- End Header -->
-                            <!-- Content -->
+                             End Header
+                             Content 
                             <div class="card-body">
                                 <ul class="list-group list-group-flush price-list">
                                     <li class="list-group-item bg-white border-0 ps-0"><strong>1000+</strong> Components</li>
@@ -607,7 +613,7 @@
                             </div>
                             <a href="https://appseed.us/admin-dashboards/django-dashboard-volt-pro" target="_blank" 
                                class="btn btn-secondary d-flex align-items-center justify-content-center mb-0 mt-2">Django Volt Pro <svg class="icon icon-xs ms-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>
-                            <!-- End Content -->
+                             End Content
                         </div>
                     </div>
                 </div>
@@ -633,15 +639,18 @@
             </div>
         </section>
 
-        
+       -->  
 
 
     </main>
     {% endblock %}
 
-    {% block footer %} 
-    {% include 'includes/g_footer.html' %} 
-    {% endblock %}
+        {% block footer %} 
+        <!--
+            {% include 'includes/g_footer.html' %} 
+        -->
+        
+        {% endblock %}
 
    
 

@@ -1,3 +1,4 @@
+from email.policy import default
 from django.forms import model_to_dict
 from evaluation.models import DifinedLabel
 # import evaluation.models.DifinedLabel
@@ -10,11 +11,14 @@ from django.urls import reverse
 class UserType(models.Model):
     name = models.CharField(max_length=252)    
     slug = models.SlugField(unique=True, null=False, blank=False)
-    svg_path = models.TextField()
+    # svg_path = models.TextField()
+    icon = models.ImageField(upload_to = 'usertype/')
     created = models.DateTimeField(auto_now_add=True)
     is_producer = models.BooleanField(default=False)
     is_expert = models.BooleanField(default=False)
     is_consumer = models.BooleanField(default=False)    
+    sort_order = models.IntegerField(default=1)
+    active = models.BooleanField(default=False)
    
     
     def get_absolute_url(self):        

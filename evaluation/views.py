@@ -23,7 +23,7 @@ from django.core.exceptions import PermissionDenied
 @login_required
 @producer_required
 def eva_index(request):  
-    print(request.session.items())
+    
     null_session(request)
     try:
         session_evaluator = Evaluator.objects.get(id = request.session['evaluator'])
@@ -84,11 +84,14 @@ def eva_index(request):
             "name":name
             }
             form = EvaluatorForm(initial = initial_dict)
-
+        
+        
+        
 
         context = {
         'form': form,
         'evaluator': False,
+        
         
         }
         return render(request, 'evaluation/index.html', context = context)
@@ -101,11 +104,13 @@ def eva_index(request):
         question = Question.objects.get(id = request.session['question'])
         options = Option.objects.filter(question = question)
         evaluator_data = get_current_evaluator(request)
+        total_ques = Question.objects.all().count() - request.session['total_question']
         try:
             selected_option = Option.objects.get(id = request.session['option'])
         except Exception as e:
             selected_option = ''
         eva_lebels = EvaLabel.objects.filter(evaluator = evaluator_data).order_by('sort_order')
+        timing_text = f"Depending on how you are answering the questions may take {round(total_ques/6)} to {round(total_ques/2)} min."
         context = {
             'question': question,
             'optns': options,
@@ -115,7 +120,8 @@ def eva_index(request):
             'selected_option': selected_option,
             'acive': request.session['active'],
             'total_question': request.session['total_question'],
-            'qualified_rang' : 2
+            'qualified_rang' : 2,
+            'timing_text': timing_text
             
 
         }

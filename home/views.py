@@ -21,7 +21,7 @@ from django.db.models import Count, Min
 def home(request):
     null_session(request)
     
-    user_types = UserType.objects.all()
+    user_types = UserType.objects.filter(active = True).order_by('sort_order') 
     context = {
         'user_types': user_types        
     }

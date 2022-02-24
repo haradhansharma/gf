@@ -44,7 +44,7 @@
                         <div class="d-block text-center justify-content-center mb-6 mb-lg-5">
                             
                                 <div class="icon-user-type icon-shape-user-type bg-transparent text-center shadow-lg rounded mb-4">
-                                    <svg class="icon-user-type icon-size-user-type  text-secondary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="{{ user_type.svg_path }}"></path></svg>
+                                    <img src="{{ user_type.icon.url }}" alt="">
                                 </div>
                                 
                                 {% if request.user.is_authenticated %}
@@ -62,7 +62,9 @@
                     </div>
                 </div>
             </div>
-            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2"><svg class="home-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4"><path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path></svg></figure>       
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="home-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4"><path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path></svg>
+            </figure>       
         </section>
         <div class="section pt-0">
             <div class="container mt-n10 mt-lg-n12 z-2">
